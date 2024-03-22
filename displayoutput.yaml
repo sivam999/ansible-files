@@ -1,0 +1,8 @@
+- hosts: app
+  tasks:
+    - name: store information
+      shell: cat /etc/os-release
+      register: output
+    - name: display output
+      debug:
+        var: output

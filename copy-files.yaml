@@ -1,0 +1,7 @@
+- hosts: all
+  ignore_unreachable: false
+  tasks:
+    - name: creating file
+      file:
+        name: fuge.cgc
+        state: touch

@@ -1,0 +1,7 @@
+#name: sriv
+#home: /home/ec2-user
+#file: text.c
+#name: httpd.conf
+home: /etc/httpd/conf/httpd.conf
+prt: 87
+name: crit

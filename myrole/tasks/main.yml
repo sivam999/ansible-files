@@ -1,0 +1,8 @@
+---
+# tasks file for myrole
+- name: replacing files
+  template:
+    src: httpd.conf
+    dest: /etc/httpd/conf/httpd.conf
+  notify: restart service
+    

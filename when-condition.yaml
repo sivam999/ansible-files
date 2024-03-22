@@ -1,0 +1,14 @@
+- hosts: app
+  vars:
+    remote_path: abc.txt
+  tasks:
+    - name: checking file
+      stat:
+        path: "{{ remote_path }}"
+      register: output
+    - name: displaying file
+      debug:
+        var: output
+    - name: taking backup file
+      command: cp "{{ remote_path }}" "{{ remote_path }}-backup"
+      when: output['stat']['exists']

@@ -1,0 +1,10 @@
+- hosts: all
+  name: displaying ansible-facts
+  tasks:
+    - name: learning-ansible-facts
+      debug:
+        var: ansible_facts
+    - name: display ansible-facts
+      debug:
+        msg: "{{ ansible_facts.all_ipv4_addresses }} and {{ ansible_facts.os_family }}"
+    

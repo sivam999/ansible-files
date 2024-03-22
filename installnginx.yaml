@@ -1,0 +1,12 @@
+- hosts: app
+  name: install software
+  become: yes
+  tasks:
+    - name: adding software
+      package:
+        name: nginx
+        state: latest
+    - name: starting service
+      service:
+        name: nginx
+        state: started

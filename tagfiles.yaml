@@ -1,0 +1,16 @@
+- hosts: all
+  name: learning tags
+  tasks:
+    - name: create file
+      file:
+        name: sune
+        state: touch
+      tags:
+        - file
+    - name: adding line
+      lineinfile:
+        name: abc.txt
+        regexp: create test
+        line: creating test
+      tags:
+        - modify

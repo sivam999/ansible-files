@@ -1,0 +1,8 @@
+- hosts: all
+  serial: 3
+  tasks:
+    - name: sending file
+      copy:
+        src: devops.sh
+        dest: /home/ec2-user
+

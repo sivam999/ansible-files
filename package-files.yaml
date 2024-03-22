@@ -1,0 +1,12 @@
+- hosts: all
+  become: yes
+  vars:
+    packages:
+      - git
+      - nginx
+  tasks:
+    - name: install packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages }}"

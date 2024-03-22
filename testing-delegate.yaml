@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: copying file
+      copy:
+        src: text.c
+        dest: /home/ec2-user
+      delegate_to: 13.201.184.119
+
+        

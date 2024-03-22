@@ -1,0 +1,12 @@
+- hosts: app
+  become: yes
+  vars_files:
+    - vault
+  tasks:
+    - name: adding secret-file
+      lineinfile:
+        path: /home/ec2-user/vaultpass.txt
+        create: yes
+        line: "{{ userid }}-{{ password }}"
+
+

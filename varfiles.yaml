@@ -1,0 +1,10 @@
+- hosts: all
+  name: testing-varfiles
+  vars:
+    name: test.txt
+    remote: /home/ec2-user
+  tasks:
+    - name: copying-files
+      copy:
+        src: "{{ remote }}/{{ name }}"
+        dest: "{{ remote }}/{{ name}}"

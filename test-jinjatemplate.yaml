@@ -1,0 +1,10 @@
+- hosts: all
+  name: learning jinja-templates
+  vars:
+    name: devops
+    pwd: siva
+  tasks:
+    - name: substituting values
+      template:
+        src: app.properties.j2
+        dest: /home/ec2-user/siva

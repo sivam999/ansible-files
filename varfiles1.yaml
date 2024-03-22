@@ -1,0 +1,9 @@
+- hosts: all
+  name: testing-varfiles
+  vars_files:
+    - vars.yaml
+  tasks:
+    - name: copying-files
+      copy:
+        src: "{{ name }}"
+        dest: "{{ home }}"

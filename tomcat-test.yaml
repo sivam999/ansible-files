@@ -1,0 +1,13 @@
+- hosts: app
+  become: yes
+  tasks:
+    - name: install tomcat
+      package:
+        name: tomcat
+        state: present
+    - name: checking tomcat
+      command: which tomcat
+      register: siva
+    - name: display output
+      debug:
+        var: siva

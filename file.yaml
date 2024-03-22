@@ -1,0 +1,14 @@
+- hosts: app
+  name: creating and copy file
+  become: yes
+  tasks:
+    - name: creating file
+      file:
+        name: /home/ec2-user/fbi.py
+        state: touch
+    - name: adding text in file
+      lineinfile:
+        path: fbi.py
+        line: adding context
+
+

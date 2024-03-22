@@ -1,0 +1,14 @@
+- hosts: app
+  become: yes
+  tasks:
+    - name: install jenkins
+      block:
+        - yum: 
+            name: jenkins
+            state: present
+      rescue:
+        - debug:
+            var: output
+      always:
+        - debug:
+            msg: "my output server"

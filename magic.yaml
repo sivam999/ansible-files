@@ -1,0 +1,13 @@
+- hosts: all
+  name: testing magic variables
+  vars_files:
+    - vars.yaml
+  tasks:
+    - name: creating new files
+      copy:
+        src: "{{ file }}"
+        dest: "{{ home }}/{{ file }}"
+    - name: adding text to created file
+      lineinfile:
+        path: "{{ home }}/{{ file }}"
+        line: "{{ ansible_hostname }}"
